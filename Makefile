@@ -1,9 +1,9 @@
 RL_LIBS=-lraylib -lX11 -lGL -lm
 
-all: build run
+all: build-raylib run
 
-build:
-	cc -o main main.c -ggdb $(RL_LIBS)
+build-raylib:
+	cc -o main ./examples/raylib_example.c -ggdb $(RL_LIBS) -fsanitize=address
 
 run:
 	./main
